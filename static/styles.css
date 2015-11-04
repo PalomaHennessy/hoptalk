@@ -1,0 +1,80 @@
+#bheader {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 100px;
+	text-align: center;
+	margin-top: 30px;
+	color: white;
+/*	background: rgba(255, 255, 255, 0.5);*/
+
+	/*background: rgba(0, 0, 0, 0.5);*/
+	border-radius: 10px;
+	/*font-weight:bold;*/
+}
+
+body.index{
+	background: url(http://www.dhresource.com/0x0s/f2-albu-g3-M00-F1-70-rBVaHVSv75-AeppOAAaQTMblXTE043.jpg/7x5ft-vinyl-custom-photography-backdrops.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color:transparent;
+}
+
+body.submit {
+	background: url(http://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ background-color:transparent;
+}
+.form-horizontal {
+	background: rgba(0, 0, 0, 0.5);
+	padding-top: 45px;
+	padding-bottom: 40px;
+	padding-left: 15px;
+	padding-right: 50px;
+	color:white;
+	margin-left: auto;
+	margin: auto;
+	border-radius: 10px;
+	margin-top: 50px;
+	width: 60em;
+
+}
+
+#signup {
+	margin-left: 10px;
+}
+
+body { padding-top: 70px; 
+}
+
+/*For submit page*/
+
+.beercontainer {
+	padding-left: 20px;
+}
+
+img {
+	margin: 10px;
+}
+
+h2 {
+	padding: 20px;
+/*	background: rgba(0, 0, 0, 0.5);*/
+
+}
+h1 {
+	padding: 20px;
+}
+
+#beerInputName {
+	margin: auto;
+}
+
+
+
+
+
+
