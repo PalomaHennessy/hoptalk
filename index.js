@@ -48,6 +48,7 @@ app.use(function(req, res, next){
 
 app.use("/beer", require("./controllers/beer"));
 app.use("/", require("./controllers/auth"));
+app.use("/search", require("./controllers/search"));
 
 app.get("/", function(req, res){
 	res.render("index.ejs");
@@ -58,14 +59,12 @@ app.get("/submit", function(req, res){
 	res.render("submit.ejs");
 });
 
-app.get("/search", function(req, res){
-	res.render("search.ejs");
-});
-app.get("/choices", function(req, res){
-	res.render("choices.ejs");
-});
 app.get("/favorites", function(req, res){
-	res.render("favorites.ejs");
+	db.favorite.findAll({
+		where: {userId: req.currentUser.id}
+	}).then(function(favorites){
+		res.render("favorites.ejs", {data: favorites});
+	})
 });
 
 app.listen(process.env.PORT || 3000, function(){	

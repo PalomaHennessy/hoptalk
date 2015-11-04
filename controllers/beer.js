@@ -8,70 +8,63 @@ var environment = process.env.NODE_ENV || 'development';
 //need name, abv, ibu, srmId, availabilityId, styleId
 
 
-router.post("/submit/name", function(req, res) {
-	console.log("efasf",req.body.beerInputName)
-	var name = req.body.q;
-	var url = "http://api.brewerydb.com/v2/search/?q="+name+"&key="+process.env.BEER_DB;
-	console.log(url);
-	request(
-		url,
-		function(error, response, body){
-			if(!error && response.statusCode === 200){
-				var data = JSON.parse(body);
-				console.log('data', data);
+
+//List all favorites on a page
+router.get("/favorites", function(req, res){
+	db.favorite.findAll().then(function(name){
+	res.render("favorites.ejs", {data : name})
+	});
+	// res.render("favorite.ejs", {data : favorite})
+});
+
+//Add a favorite to the list from other page
+router.post("/favorites", function(req, res) {
+	// console.log("efasf",req.body.beerInputName)
+	// var name = req.body.q;
+	// var url = "http://api.brewerydb.com/v2/search/?q="+name+"&key="+process.env.BEER_DB;
+	// console.log(url);
+	// request(
+	// 	url,
+	// 	function(error, response, body){
+	// 		if(!error && response.statusCode === 200){
+	// 			var data = JSON.parse(body);
+	// 			console.log('data', data);
+	console.log("right?")
+	console.log('USERID',req.currentUser.id)
+
 	db.favorite.create({
-			name:data.data[0].name, 
-			styleId:data.data[0].styleId, 
-			description:data.data[0].description, 
-			glassware:data.data[0].glasswareId, 
-			userId:data.data[0].userId
+			name: (req.body.name ? req.body.name : null),
+			styleId: (req.body.styleId ? req.body.styleId : null), 
+			description: (req.body.description ? req.body.description : null), 
+			glassware: (req.body.glasswareId ? req.body.glasswareId : null), 
+			userId: req.currentUser.id
 		}).then(function(favorite){
-			db.user.findAll(then(function(title){
-				res.render("favorites.ejs", {data:title})
-				}).catch(function(error){
-				res.send("nope")
-			}));	
-		res.render("favorites.ejs", {data: favorite})
+			console.log('is this working?!', favorite)
+			db.favorite.findAll({
+				where: {userId: req.currentUser.id}
+			}).then(function(data){
+				console.log('is this pulling?!',data)
+				console.log("redirect to faves")
+				res.redirect("/favorites")
+			});
+		// res.render("products.ejs", {data: favorite})
 		});	
-			} else {
-				res.send(body);
-			} 
-		}
-	);
 
 });	 
 
-router.get("/submit", function(req, res){
-	db.user.findAll().then(function(name){
-	res.render("favorites.ejs", {data: name})
-	});
-});
-
-router.post("/submit/name", function(req, res){
-	console.log("beername")
-});		
-
-
 router.delete("/name", function(req, res){
 	db.favorites.destory ({
-		where: {
-			name: req.params.name
-		}
-	}).then(function(){
-		res.send({'msg':'success'});
-	}).catch(function(e){
-		res.send({'msg':'error', 'error':e});
-	});
+			where: {
+				name: req.body.name
+			}
+		}).then(function(){
+			res.send({'msg':'success'});
+		}).catch(function(e){
+			res.send({'msg':'error', 'error':e});
+		});
 });
-// })
 
 module.exports = router;
 
 //make model with favorites that is associated with user favorites
 
-
-
-
-// var query = req.params.q;
-//  request(searchUrl+"q="+query+"key="+process.env.API_KEY, function(err, response, body){
-// var data = JSON.parse(body);

@@ -26,7 +26,7 @@ router.route("/login")
         } else if (user) {
           req.session.user = user.id;
           req.flash("success", "You are logged in!");
-          res.redirect("/search");
+          res.redirect("/favorites");
         } else {
           req.flash("Danger", "Invalid username or password");
           res.redirect("/");
@@ -58,7 +58,7 @@ router.route('/signup')
           }).spread(function(user, created) {
             if (created){
               req.flash('success', 'You are signed up');
-              res.redirect('/submit');
+              res.redirect('/search');
             } else {
               req.flash("danger", "A user with that email already exists");
               res.redirect("/signup");

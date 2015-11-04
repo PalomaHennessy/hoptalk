@@ -9,14 +9,14 @@
 
 <body class="submit">
 
-<h1>Lets Get to Know Each Other</h1>
+<h2>Search for a beer here!</h2>
 
-<h2>Enter a type of beer you typically enjoy</h2>
- <form class="form-inline" method="POST" action="/beer/submit/name" role="form">
+
+ <form class="form-inline" method="GET" action="/search/products" role="form">
  	<div class="form-group">
     	<label for="beerInputName"></label>
      	 <input type="text" class="form-control" id="beerInputName" placeholder="Guinness" name="q">
-    <button type="submit" class="btn btn-default" id="beerlist" href="/favorites">Add to Favorites</button>
+    <button type="submit" class="btn btn-default" id="beerlist">Search</button>
   
     </div>
  		 

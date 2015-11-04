@@ -10,9 +10,10 @@
 </nav>
 
 <h1>Favorites</h1>
-
-<div class="well">
- <%= data.name %>
- <%= data.description %>
- </div>
+<% data.forEach(function(beerz){%>
+	<div class="well">
+		<%= beerz.name %>
+		<%= beerz.description %>
+		</div>
+<% }); %>
 

@@ -1,0 +1,17 @@
+
+<% data.data.forEach(function(beerz){%>
+	<div class="well">
+		<%= beerz.name %>
+		<%= beerz.description %>
+		<form method="POST" action="/beer/favorites">
+			<input type="hidden" name="name" value="<%= beerz.name  %>"> 
+			<input type="hidden" name="description" value="<%= beerz.description%>"> 
+			<input type="hidden" name="glasswareId" value="<%= beerz.glasswareId %>"> 
+			<input type="hidden" name="styleId" value="<%= beerz.styleId  %>">
+			<button type="submit" class="btn btn-default" id="beerlist">Add to Favorites</button>
+		</form>
+	</div>
+<% }); %>
+
+
+   
