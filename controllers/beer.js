@@ -31,10 +31,10 @@ router.post("/submit/name", function(req, res) {
 			// 	}).catch(function(error){
 			// 	res.send("nope")
 			// }));	
-		// db.favorite.find({
-		// 	where:{userId: }
+		db.favorite.find({
+			where:{userId: }
 			
-		// 	})
+			})
 		res.render("favorites.ejs", {data: favorite})
 		});	
 			} else {
