@@ -26,15 +26,11 @@ router.post("/submit/name", function(req, res) {
 			glassware:data.data[0].glasswareId, 
 			userId:data.data[0].userId
 		}).then(function(favorite){
-			// db.user.findAll(then(function(title){
-			// 	res.render("favorites.ejs", {data:title})
-			// 	}).catch(function(error){
-			// 	res.send("nope")
-			// }));	
-		db.favorite.find({
-			where:{userId: }
-			
-			})
+			db.user.findAll(then(function(title){
+				res.render("favorites.ejs", {data:title})
+				}).catch(function(error){
+				res.send("nope")
+			}));	
 		res.render("favorites.ejs", {data: favorite})
 		});	
 			} else {
