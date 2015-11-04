@@ -1,6 +1,3 @@
-var env = require("node-env-file");
-env(__dirname+"/.env");
-
 var express = require("express");
 var app = express();
 var db = require("./models");
