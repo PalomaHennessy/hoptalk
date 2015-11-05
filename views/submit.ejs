@@ -1,26 +1,44 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="/favorites">Favorites</a></li>
-  <li role="presentation"><a href="/search">Search</a></li>
-</ul>
-  </div>
-</nav>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="/index">Hop Talk</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/submit">Search</a>
+                    </li>
+                    <li>
+                        <a href="/favorites">Your Favorites</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>		
+<div class="overlay">  
+	<form class="form-inline" method="GET" action="/search/products" role="form">
+ 		<div class="form-group" id="submitGroup">
+ 			<div class="row">
+	    		<label for="beerInputName"></label>
+	    		<div class="col-xs-12 col-md-8"><input type="text" class="form-control" id="beerInputName" placeholder="ex. Guinness" name="q"></div>
+	    		<div class="col-xs-6 col-md-4"><button type="submit" class="btn btn-default" id="beerlist">Search</button></div>
+    		</div>
+    	</div>
+    </form>	
+</div>    
 
-<body class="submit">
 
-<h2>Search for a beer here!</h2>
-
-
- <form class="form-inline" method="GET" action="/search/products" role="form">
- 	<div class="form-group">
-    	<label for="beerInputName"></label>
-     	 <input type="text" class="form-control" id="beerInputName" placeholder="Guinness" name="q">
-    <button type="submit" class="btn btn-default" id="beerlist">Search</button>
-  
-    </div>
- 		 
-<h2>For a more "randomized" list of beers click on a glass you like instead</h2>
+<!-- <h2>For a more "randomized" list of beers click on a glass you like instead</h2>
 
 <form>
 	<div class="beercontainer">
@@ -30,5 +48,4 @@
 		<img src="https://cdn.shopify.com/s/files/1/0323/5573/files/Weizen-Glass.jpg?5288227289435310621" style="width:250px; height:250px" id="weizen" class="img-rounded">
 		<img src="http://www.craftbeerware.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/t/h/thistle-beer-glass_1.jpg" style="width:250px; height:250px" id="thistle" class="img-rounded">
 	</div>
-</form>
-</body>
+</form> -->

@@ -39,12 +39,9 @@ router.post("/favorites", function(req, res) {
 			glassware: (req.body.glasswareId ? req.body.glasswareId : null), 
 			userId: req.currentUser.id
 		}).then(function(favorite){
-			console.log('is this working?!', favorite)
 			db.favorite.findAll({
 				where: {userId: req.currentUser.id}
 			}).then(function(data){
-				console.log('is this pulling?!',data)
-				console.log("redirect to faves")
 				res.redirect("/favorites")
 			});
 		// res.render("products.ejs", {data: favorite})
@@ -52,16 +49,19 @@ router.post("/favorites", function(req, res) {
 
 });	 
 
-router.delete("/name", function(req, res){
-	db.favorites.destory ({
+router.delete("/favorites/delete/:id", function(req, res){
+	var id= req.params.id 
+	console.log('id', id)
+	db.favorite.destory ({
 			where: {
-				name: req.body.name
+				id: id
 			}
 		}).then(function(){
 			res.send({'msg':'success'});
 		}).catch(function(e){
 			res.send({'msg':'error', 'error':e});
 		});
+
 });
 
 module.exports = router;

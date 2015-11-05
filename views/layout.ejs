@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hop Talk</title>
-	<link rel="stylesheet" type="text/css" href="/styles.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Hop Talk</title>
+   <link rel="stylesheet" type="text/css" href="/styles.css">
+   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+   <link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<h1>Current User:<%=currentUser.id%></h1>
+<!-- <h1>Current User:<%=currentUser.id%></h1> -->
+<% if(typeof alerts !== 'undefined'){ %>
+   <% for(key in alerts){ %>
+   <% alerts[key].forEach(function(thisMsg){ %>
+   <div class="col-md-4 col-md-offset-4">
+        <div class='myAlerts alert-<%= key %>'><%= thisMsg %></div>
+   </div>
+   <% }); %>
+   <% } %>
+   <% } %>
 <%- body %>
-<!-- Latest compiled and minified JS -->
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="/script.js"></script>

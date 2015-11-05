@@ -1,33 +1,19 @@
+body {
+	background: url(https://blog.h4t0n.com/content/images/2015/07/wall-black-background-desktop-12-.jpg) cover cover no-repeat;
+	padding-top: 70px; 
+}
+
+
+
 #bheader {
 	font-family: 'Fredericka the Great', cursive;
 	font-size: 100px;
 	text-align: center;
 	margin-top: 30px;
 	color: white;
-/*	background: rgba(255, 255, 255, 0.5);*/
-
-	/*background: rgba(0, 0, 0, 0.5);*/
 	border-radius: 10px;
-	/*font-weight:bold;*/
 }
 
-body.index{
-	background: url(http://www.dhresource.com/0x0s/f2-albu-g3-M00-F1-70-rBVaHVSv75-AeppOAAaQTMblXTE043.jpg/7x5ft-vinyl-custom-photography-backdrops.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color:transparent;
-}
-
-body.submit {
-	background: url(http://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
- background-color:transparent;
-}
 .form-horizontal {
 	background: rgba(0, 0, 0, 0.5);
 	padding-top: 45px;
@@ -44,37 +30,79 @@ body.submit {
 }
 
 #signup {
-	margin-left: 10px;
+	margin-left: 9px;
 }
 
-body { padding-top: 70px; 
+.background {
+	width: 100%;
+	position:fixed !important;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background-color: #C7F1EB;
 }
+
+#landingpage {
+	background-image: url('https://blog.h4t0n.com/content/images/2015/07/wall-black-background-desktop-12-.jpg'); 
+	background-repeat: no-repeat;
+}
+
+
+
 
 /*For submit page*/
 
-.beercontainer {
-	padding-left: 20px;
-}
+/*.overlay{
+    opacity:0.8;
+    background-color: #FCF4F4;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1;
+}*/
+#submitGroup {
+	z-index: 2;
+	position: relative;
+	margin-left: 500px;
+	margin-top: 200px;
 
-img {
-	margin: 10px;
-}
-
-h2 {
-	padding: 20px;
-/*	background: rgba(0, 0, 0, 0.5);*/
-
-}
-h1 {
-	padding: 20px;
 }
 
 #beerInputName {
-	margin: auto;
+   width: 350px;
+    margin: auto;
+	height: 35px;
+
+}
+#beerlist{
+    background: none;
+    margin-left: 20px;
 }
 
+/*favorites page
+*/
 
+#fav {
+	margin-left: 100px;
+	margin-bottom: 20px;
+	margin-top:20px;
+	font-family: 'Lato', sans-serif;
+}
 
+.well {
+		font-family: 'Lato', sans-serif;
+		margin-right: 100px;
+		margin-left: 100px;
+}
 
+#delete {
+ 	margin: 10px;
+}
 
-
+.db {
+	margin: 10px;
+}

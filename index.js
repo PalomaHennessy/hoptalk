@@ -67,6 +67,40 @@ app.get("/favorites", function(req, res){
 	})
 });
 
+// app.delete("/favorites/delete/:id", function(req, res){
+// 	var id= req.params.id 
+// 	console.log('id', id)
+// 	db.favorite.destory({
+// 			where: {
+// 				id: id
+// 			}
+// 		}).then(function(){
+// 			res.send({'msg':'success'});
+// 		}).catch(function(e){
+// 			res.send({'msg':'error', 'error':e});
+// 		});
+
+// });
+
+app.delete("/favorites/delete/:id", function(req, res){
+	var id= req.params.id 
+	console.log('id', id)
+	db.favorite.find({
+			where: {
+				id: id
+			}
+		}).then(function(data){
+			data.destroy();
+			res.send({'msg':'success'});
+		}).catch(function(e){
+			res.send({'msg':'error', 'error':e});
+		});
+	
+});
+
+
+
+
 app.listen(process.env.PORT || 3000, function(){	
 	console.log("Much Port Such Sound 3000");
 });

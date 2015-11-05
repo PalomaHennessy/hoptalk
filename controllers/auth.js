@@ -14,7 +14,7 @@ var db = require('../models');
         
 router.route("/login")
   .get (function(req, res){
-    res.render("index.ejs");
+    res.render("index.ejs", {bodyClass:"foobar"});
   })
   .post(function(req, res){
     db.user.authenticate(
@@ -28,7 +28,7 @@ router.route("/login")
           req.flash("success", "You are logged in!");
           res.redirect("/favorites");
         } else {
-          req.flash("Danger", "Invalid username or password");
+          req.flash("error", "Invalid username or password");
           res.redirect("/");
 
         }
