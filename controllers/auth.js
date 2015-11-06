@@ -14,7 +14,7 @@ var db = require('../models');
         
 router.route("/login")
   .get (function(req, res){
-    res.render("index.ejs", {bodyClass:"foobar"});
+    res.render("index.ejs");
   })
   .post(function(req, res){
     db.user.authenticate(
@@ -58,7 +58,7 @@ router.route('/signup')
           }).spread(function(user, created) {
             if (created){
               req.flash('success', 'You are signed up');
-              res.redirect('/search');
+              res.redirect('/login');
             } else {
               req.flash("danger", "A user with that email already exists");
               res.redirect("/signup");
