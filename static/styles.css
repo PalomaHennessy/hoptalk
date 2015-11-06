@@ -82,6 +82,8 @@ body {
 	/*height:100vh;*/
 }
 
+
+
 #fav {
 	margin-left: 100px;
 	margin-bottom: 20px;
@@ -131,4 +133,8 @@ body {
 
 #signuppage {
 	background-image: url(http://www.ehiyo.com/wp-content/uploads/2015/03/wooden-wall-wallpaper-wide-photos-4p3beo.jpg);
+}
+
+.flash {
+	float: right;
 }
