@@ -76,19 +76,12 @@ body {
 
 /*favorites page*/
 
-.background {
-	width: 100%;
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	background-color: white;
-}
 #favoritespage {
 	background-image: url(http://store.inspiremebaby.com/wp-content/uploads/2012/05/darkwood-painted-floor.jpg);
-
+	/*background-repeat: no-repeat;*/
+	/*height:100vh;*/
 }
+
 #fav {
 	margin-left: 100px;
 	margin-bottom: 20px;
@@ -119,17 +112,11 @@ body {
 
 /*productspage*/
 
-.background {
-	width: 100%;
-	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
-	left:0;
-	background-color: black;
-}
 #productspage {
 	background-image: url(http://images1.westword.com/imager/u/745xauto/7313727/blackshirtbarrels.jpg);
+	/*background-repeat: no-repeat;*/
+/*	height:100vh;*/
+
 
 }
 
