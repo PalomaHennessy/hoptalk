@@ -1,14 +1,43 @@
+<div class="background2" id="productspage">   
+	<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+	        <div class="container topnav">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand topnav" href="/">Hop Talk</a>
+	            </div>
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                        <a href="/submit">Search</a>
+	                    </li>
+	                    <li>
+	                        <a href="/favorites">Your Favorites</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container -->
+	    </nav>	
 
+<h1 id="productslist"> Search Results </h1>
 <% data.data.forEach(function(beerz){%>
 	<div class="well">
-		<%= beerz.name %>
+		<h2><%= beerz.name %></h2>
 		<%= beerz.description %>
 		<form method="POST" action="/beer/favorites">
 			<input type="hidden" name="name" value="<%= beerz.name  %>"> 
 			<input type="hidden" name="description" value="<%= beerz.description%>"> 
 			<input type="hidden" name="glasswareId" value="<%= beerz.glasswareId %>"> 
 			<input type="hidden" name="styleId" value="<%= beerz.styleId  %>">
-			<button type="submit" class="btn btn-default" id="beerlist">Add to Favorites</button>
+			<button type="submit" class="btn btn-default" id="addtofave">Add to Favorites</button>
 		</form>
 	</div>
 <% }); %>

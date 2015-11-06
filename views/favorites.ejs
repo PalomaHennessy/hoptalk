@@ -1,43 +1,38 @@
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="/index">Hop Talk</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/submit">Search</a>
-                    </li>
-                    <li>
-                        <a href="/favorites">Your Favorites</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>		
+<div class="background2" id="favoritespage">   
+	<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+	        <div class="container topnav">
+	            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand topnav" href="/index">Hop Talk</a>
+	            </div>
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                        <a href="/submit">Search</a>
+	                    </li>
+	                    <li>
+	                        <a href="/favorites">Your Favorites</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container -->
+	    </nav>		
 
-<h1 id="fav">Favorites</h1>
-
-<% data.forEach(function(beerz){%>
-	<div class="well">
-	<%=beerz  %>
-		<h2><%= beerz.name %></h2>
-		<%= beerz.description %>
-		<!-- <form action="/favorites/delete" method="GET" role='form'>
-		<button class="db btn btn-danger pull-right delete-btn" type='submit'>Remove from List</button>
-		</form> -->
-
-		<a href = "/favorites/delete/<%= beerz.id %>" class="btn btn-danger pull-right delete-btn">Delete</a>
-	</div>
-<% }); %>
-
+	<h1 id="fav">Favorites</h1>
+		<% data.forEach(function(beerz){%>
+			<div class="well">
+				<h2 id="beername"><%= beerz.name %></h2>
+				<%= beerz.description %>
+				<a href = "/favorites/delete/<%= beerz.id %>" class="db btn btn-danger delete-btn">Delete</a>
+			</div>
+		<% }); %>
+</div>

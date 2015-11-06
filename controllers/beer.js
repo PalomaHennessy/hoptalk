@@ -49,20 +49,6 @@ router.post("/favorites", function(req, res) {
 
 });	 
 
-router.delete("/favorites/delete/:id", function(req, res){
-	var id= req.params.id 
-	console.log('id', id)
-	db.favorite.destory ({
-			where: {
-				id: id
-			}
-		}).then(function(){
-			res.send({'msg':'success'});
-		}).catch(function(e){
-			res.send({'msg':'error', 'error':e});
-		});
-
-});
 
 module.exports = router;
 

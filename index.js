@@ -84,7 +84,7 @@ app.get("/favorites", function(req, res){
 
 app.delete("/favorites/delete/:id", function(req, res){
 	var id= req.params.id 
-	console.log('id', id)
+	// console.log('id', id)
 	db.favorite.find({
 			where: {
 				id: id
@@ -97,8 +97,6 @@ app.delete("/favorites/delete/:id", function(req, res){
 		});
 	
 });
-
-
 
 
 app.listen(process.env.PORT || 3000, function(){	
