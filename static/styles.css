@@ -4,7 +4,11 @@ body {
 	padding-bottom: 30px;
 }
 
+.navbar-default {
+	color: black;
+	text-align: center;
 
+}
 
 #bheader {
 	font-family: 'Fredericka the Great', cursive;
@@ -15,6 +19,11 @@ body {
 	border-radius: 10px;
 }
 
+#description {
+	font-size: 20px;
+	text-align: center;
+
+}
 .form-horizontal {
 	background: rgba(0, 0, 0, 0.5);
 	padding-top: 45px;

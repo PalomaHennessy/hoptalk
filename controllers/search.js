@@ -16,9 +16,12 @@ router.get("/products", function(req, res) {
 			if(!error && response.statusCode === 200){
 				var data = JSON.parse(body);
 				console.log('data', data);
-
-				
-			 } res.render("products.ejs", {data: data});	
+			  	res.render("products.ejs", {data: data});
+			} else {
+				req.flash("error", "Try searching again!")
+				res.render("submit.ejs")
+			}		
+			
 	})
 });
 module.exports = router;

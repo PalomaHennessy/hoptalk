@@ -52,5 +52,4 @@ router.post("/favorites", function(req, res) {
 
 module.exports = router;
 
-//make model with favorites that is associated with user favorites
 
